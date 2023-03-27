@@ -23,5 +23,5 @@ noRectangles = noRectangles + valuesContained.Count();
 ![image](https://user-images.githubusercontent.com/79668619/228051418-1c3bfa35-86d2-4088-b341-92a1ba84563f.png)
 #### Given the points: (1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3) my solution will find 9 rectangles. Squares are considered rectangles, 
 ### User guide:
-#### When running the app, the path from the file should be changed, as C# has such a not nice way to handle files :D
+#### When cloning the repository and before running the program, the path from the file should be changed, as C# has such a not nice way to handle files :D
 
