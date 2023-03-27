@@ -4,9 +4,10 @@
 string input = File.ReadAllText("C:\\Users\\andre\\source\\repos\\CartesianCoordinates\\CartesianCoordinates\\input.txt");
 
 // use a regular expression to store the points 
-// the points will be added as (p1, p2), (p3, p4) where p1, p2, p3 and p4 are all integers.
+// the points will be stored as (p1, p2), (p3, p4) where p1, p2, p3 and p4 are all integers.
 var regex = new Regex(@"\(\s*(\d+)\s*,\s*(\d+)\s*\)");
 
+//creates the list of <int, int> in which the points will be stored and assignes the values from the input file which match the pattern defined above in regex
 var coordinates = regex.Matches(input)
     .Cast<Match>()
     .Select(m => Tuple.Create(int.Parse(m.Groups[1].Value), int.Parse(m.Groups[2].Value)))
