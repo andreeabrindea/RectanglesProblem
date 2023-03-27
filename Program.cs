@@ -44,14 +44,13 @@ var noRectangles = 0;
 
 
 // loop through the dictionary, excluding the last element
-for (int i = 0; i < valuesWithX.Count - 1; i++)
+for (int i = 0; i < valuesWithX.Count; i++)
 {   
     // j will be the next element after the element at the index i, so we can compare all of them  
     for (int j = i + 1; j < valuesWithX.Count; j++)
     {
         // verify if the element at index j contains the values from the element at the index i 
         var valuesContained = valuesWithX.ElementAt(i).Value.Where(x => valuesWithX.ElementAt(j).Value.Contains(x));
-
         // if there are more than 2 common values => +1 rectangle
         // if there are 4 common values => +2 rectagles
         // and same idea if there are 6 common values => +3 rectangles
@@ -64,9 +63,11 @@ for (int i = 0; i < valuesWithX.Count - 1; i++)
         {   // if there are 5 common values => +2 rectangles 
             if (valuesContained.Count() > 1)
             {
-                noRectangles = noRectangles + valuesContained.Count()/2 + 1;
+                noRectangles = noRectangles + valuesContained.Count();
             }
         }
+
     }
 }
+
 Console.WriteLine(noRectangles);
